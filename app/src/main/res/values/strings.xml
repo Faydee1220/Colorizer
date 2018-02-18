@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Colorizer</string>
+    <string name="next_image">Next Image</string>
+    <string name="color">Color</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="reset">Reset</string>
 </resources>
