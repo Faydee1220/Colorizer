@@ -1,9 +1,13 @@
 package com.teamtreehouse.colorizer;
 
+import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -27,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadImage() {
         Glide.with(this).load(imageResIds[imageIndex]).into(imageView);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuItem menuItem = menu.add("Next Image"); // 預設會是右上角直的 ...
+        menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS); // 顯示成按鈕圖示
+        menuItem.setIcon(R.drawable.ic_add_a_photo_black_24dp);
+        menuItem.getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP); // 非透明處改為白色
+        return true;
     }
 
     private void updateSaturation() {
